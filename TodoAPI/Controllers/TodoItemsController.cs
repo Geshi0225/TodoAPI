@@ -78,7 +78,7 @@ namespace TodoAPI.Controllers // コントローラーを含む名前空間
             _context.TodoItems.Add(todoItem); // データを追加
             await _context.SaveChangesAsync(); // 変更を保存
 
-            return CreatedAtAction("GetTodoItem", new { id = todoItem.id }, todoItem); // 201 Createdを返し、新しいデータの情報を含む
+            return CreatedAtAction(nameof(GetTodoItem), new { id = todoItem.id }, todoItem); // 201 Createdを返し、新しいデータの情報を含む
         }
 
         // DELETE: api/TodoItems/5
